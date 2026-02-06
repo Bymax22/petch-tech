@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FiMail, FiMapPin, FiPhone } from 'react-icons/fi';
+import { FiMail, FiMapPin, FiPhone, FiExternalLink } from 'react-icons/fi';
 
 export default function Footer() {
   return (
@@ -70,7 +70,17 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-sm text-slate-500">
-          <p>© 2024 DN Multi Services Supply Ltd. All rights reserved. Developed by Bymax Zambia</p>
+          <p>© 2024 DN Multi Services Supply Ltd. All rights reserved. 
+            <a 
+              href="https://wa.me/260964165614?text=Hello%20Bymax%20Zambia" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="ml-2 font-bold text-[#BD2227] hover:text-red-500 transition-colors inline-flex items-center gap-1"
+            >
+              Developed by Bymax Zambia
+              <FiExternalLink className="text-sm" />
+            </a>
+          </p>
           <div className="flex gap-4 mt-4 sm:mt-0">
             <a href="#" className="hover:text-[#1185AE] transition-colors">
               Privacy Policy

@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: 'DN Multi Services - Industrial Solutions Across DRC & Zambia',
   description: 'Integrated industrial services and supplies company operating in DRC and Zambia. Mining, engineering, energy, logistics, and infrastructure solutions.',
   keywords: 'mining services, industrial supplies, DRC, Zambia, engineering, construction, energy solutions',
+  icons: {
+    icon: '/logo-01.png',
+  },
 };
 
 export default function RootLayout({
