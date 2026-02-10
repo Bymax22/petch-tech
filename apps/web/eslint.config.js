@@ -1,4 +1,7 @@
-import { nextJsConfig } from "@repo/eslint-config/next-js";
-
 /** @type {import("eslint").Linter.Config[]} */
-export default nextJsConfig;
+export default [
+	{
+		root: true,
+		extends: ["next", "next/core-web-vitals"],
+	},
+];

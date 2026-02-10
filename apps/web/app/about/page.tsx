@@ -1,230 +1,325 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { FiCheckCircle, FiUsers, FiTarget, FiAward, FiGlobe, FiClock, FiMapPin } from 'react-icons/fi';
-import Link from 'next/link';
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { 
+  Target, Eye, Users, Award, Clock, 
+  MapPin, TrendingUp, Shield 
+} from "lucide-react";
+import InteractiveServiceSelector from "../components/ui/InteractiveServiceSelector";
 
 export default function AboutPage() {
+  const milestones = [
+    { year: "2011", title: "Company Founded", description: "Started as engineering supplies provider in Ndola" },
+    { year: "2013", title: "First Major Contract", description: "Secured mining contract in Copperbelt region" },
+    { year: "2015", title: "Service Diversification", description: "Expanded into contracting and fabrication services" },
+    { year: "2018", title: "Regional Expansion", description: "Opened offices in Kitwe and Lusaka" },
+    { year: "2020", title: "Equipment Upgrade", description: "Invested in modern machinery and tools" },
+    { year: "2023", title: "200+ Projects", description: "Milestone of 200+ successful projects completed" },
+  ];
+
+  const values = [
+    {
+      icon: Shield,
+      title: "Safety First",
+      description: "Zero-harm policy and strict HSEQ compliance",
+    },
+    {
+      icon: Target,
+      title: "Excellence",
+      description: "Commitment to quality in every project",
+    },
+    {
+      icon: Users,
+      title: "Teamwork",
+      description: "Collaborative approach with clients and partners",
+    },
+    {
+      icon: TrendingUp,
+      title: "Innovation",
+      description: "Adopting latest technologies and methods",
+    },
+    {
+      icon: Clock,
+      title: "Reliability",
+      description: "On-time delivery and dependable service",
+    },
+    {
+      icon: Award,
+      title: "Integrity",
+      description: "Transparent and ethical business practices",
+    },
+  ];
+
   return (
-    <main className="min-h-screen bg-slate-950">
-      <Header />
-      
+    <>
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white">
-              About <span className="text-[#1185AE]">Us</span>
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/placeholder.svg"
+            alt="About Hero"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/50" />
+        </div>
+        
+        <div className="relative container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6">
+              Engineering <span className="text-accent">Excellence</span> Since 2011
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Leading industrial services and supply company operating across DRC and Zambia since 2014
+            <p className="text-xl text-white/90 mb-8">
+              We are a premier engineering firm delivering comprehensive solutions across Zambia's industrial sectors. 
+              With over 13 years of experience, we've built a reputation for reliability, quality, and innovation.
             </p>
-          </div>
-
-          <div className="glass rounded-3xl overflow-hidden mb-16">
-            <div className="grid lg:grid-cols-2">
-              {/* Left - Image */}
-              <div 
-                className="h-64 lg:h-full min-h-[400px] bg-cover bg-center"
-                style={{ backgroundImage: "url('/about-hero.jpg')" }}
-              >
-                <div className="relative h-full flex items-end p-6 lg:p-8">
-                  <div className="glass p-6 rounded-xl max-w-md">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-lg bg-[#BD2227] flex items-center justify-center">
-                        <FiClock className="text-white text-xl" />
-                      </div>
-                      <div>
-                        <div className="text-2xl font-bold text-white">Since 2014</div>
-                        <div className="text-sm text-slate-300">Years of Excellence</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right - Content */}
-              <div className="p-8 lg:p-12">
-                <h2 className="text-2xl font-bold mb-6 text-white">Company Overview</h2>
-                <div className="space-y-4 text-slate-300">
-                  <p>
-                    DN Multi Services Supply Ltd is a cross-border industrial services and supply company operating in the Democratic Republic of Congo and Zambia. We support mining, construction, energy, and infrastructure projects through reliable, technically compliant, and efficiently delivered solutions.
-                  </p>
-                  <p>
-                    Our service delivery model emphasizes reliability, technical compliance, and timely execution, ensuring that we meet the complex requirements of industrial and infrastructure-driven sectors.
-                  </p>
-                  <p>
-                    With strategic operations in both DRC and Zambia, we have established ourselves as a trusted partner for major industrial projects, delivering excellence through our experienced team and comprehensive service portfolio.
-                  </p>
-                </div>
-              </div>
+            <div className="flex items-center space-x-4 text-white">
+              <MapPin className="w-5 h-5" />
+              <span>Headquartered in Ndola, serving all of Zambia</span>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Company Overview */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">
+                Our <span className="text-primary">Journey</span>
+              </h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Founded in 2011, Petch-Tech Engineering started as a specialized supplier of mining and industrial 
+                consumables. Recognizing the growing demand for comprehensive engineering solutions, we expanded 
+                our services to include contracting, fabrication, and maintenance.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Today, we're proud to be one of Zambia's leading engineering firms, with a track record of 
+                200+ successful projects across mining, petroleum, manufacturing, and infrastructure sectors.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-secondary/50 p-6 rounded-xl">
+                  <div className="text-3xl font-bold font-heading text-primary mb-2">13+</div>
+                  <div className="font-medium">Years Experience</div>
+                </div>
+                <div className="bg-secondary/50 p-6 rounded-xl">
+                  <div className="text-3xl font-bold font-heading text-primary mb-2">18+</div>
+                  <div className="font-medium">Expert Engineers</div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden h-96">
+                <Image
+                  src="/placeholder.svg"
+                  alt="Our Team"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-2/3 bg-white rounded-xl shadow-xl p-6">
+                <h3 className="font-bold font-heading text-lg mb-2">Peter Kunda</h3>
+                <p className="text-muted-foreground mb-3">Technical Director</p>
+                <p className="text-sm text-muted-foreground">
+                  20+ years experience in industrial engineering and project management
+                </p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Mission */}
-            <div className="glass rounded-3xl p-8">
-                <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-[#BD2227] flex items-center justify-center">
-                  <FiTarget className="text-white text-2xl" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Our Mission</h3>
+      <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg"
+            >
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-primary" />
               </div>
-              <p className="text-slate-300">
-                To deliver integrated industrial services and supplies that empower mining, construction, energy, and infrastructure projects across DRC and Zambia, ensuring safety, quality, and sustainability in every solution we provide.
+              <h3 className="text-2xl font-bold font-heading mb-4">Our Mission</h3>
+              <p className="text-lg text-muted-foreground">
+                To deliver innovative, reliable, and cost-effective engineering solutions that empower 
+                Zambia's industrial growth while maintaining the highest standards of safety, quality, 
+                and environmental responsibility.
               </p>
-            </div>
+            </motion.div>
 
-            {/* Vision */}
-            <div className="glass rounded-3xl p-8">
-                <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-xl bg-[#1185AE] flex items-center justify-center">
-                  <FiGlobe className="text-white text-2xl" />
-                </div>
-                <h3 className="text-2xl font-bold text-white">Our Vision</h3>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl p-8 shadow-lg"
+            >
+              <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                <Eye className="w-8 h-8 text-primary" />
               </div>
-              <p className="text-slate-300">
-                To be the leading industrial services partner in Central and Southern Africa, recognized for innovation, reliability, and excellence in supporting sustainable industrial development and economic growth.
+              <h3 className="text-2xl font-bold font-heading mb-4">Our Vision</h3>
+              <p className="text-lg text-muted-foreground">
+                To become Zambia's most trusted engineering partner, recognized for excellence in 
+                transforming industrial challenges into sustainable solutions that drive economic 
+                development and create lasting value for our clients and communities.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6 bg-white/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-white">
-              Our <span className="text-[#1185AE]">Core Values</span>
+      {/* Our Values */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Our <span className="text-primary">Core Values</span>
             </h2>
-          </div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The principles that guide our work and define our culture
+            </p>
+          </motion.div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: 'Safety First',
-                description: 'Prioritizing safety in all operations',
-                icon: FiCheckCircle,
-                color: '#1185AE'
-              },
-              {
-                title: 'Quality Excellence',
-                description: 'Delivering superior quality services',
-                icon: FiAward,
-                color: '#BD2227'
-              },
-              {
-                title: 'Reliability',
-                description: 'Consistent and dependable service delivery',
-                icon: FiUsers,
-                color: '#1185AE'
-              },
-              {
-                title: 'Integrity',
-                description: 'Ethical and transparent operations',
-                icon: FiCheckCircle,
-                color: '#BD2227'
-              }
-            ].map((value, index) => (
-              <div key={index} className="glass rounded-2xl p-6 text-center">
-                <div 
-                  className="w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4"
-                  style={{ backgroundColor: `${value.color}20` }}
-                >
-                  <value.icon className="text-2xl" style={{ color: value.color }} />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-xl hover:shadow-xl transition-all duration-300 hover-lift"
+              >
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <value.icon className="w-7 h-7 text-primary" />
                 </div>
-                <h3 className="font-semibold text-white mb-2">{value.title}</h3>
-                <p className="text-sm text-slate-300">{value.description}</p>
-              </div>
+                <h3 className="text-xl font-bold font-heading mb-3">{value.title}</h3>
+                <p className="text-muted-foreground">{value.description}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Geographic Presence */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="glass rounded-3xl p-8">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-14 h-14 rounded-xl bg-[#1185AE] flex items-center justify-center">
-                <FiMapPin className="text-white text-2xl" />
-              </div>
-              <h2 className="text-2xl font-bold text-white">Geographic Presence</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-4">Democratic Republic of Congo</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Mining regions support',
-                    'Industrial supply networks',
-                    'Infrastructure projects',
-                    'Cross-border logistics hub'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3 text-slate-300">
-                      <div className="w-2 h-2 rounded-full bg-[#1185AE]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              
-              <div>
-                <h3 className="text-xl font-semibold text-white mb-4">Zambia</h3>
-                <ul className="space-y-3">
-                  {[
-                    'Copperbelt operations',
-                    'Energy solutions deployment',
-                    'Agricultural support',
-                    'Major infrastructure projects'
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-3 text-slate-300">
-                      <div className="w-2 h-2 rounded-full bg-[#BD2227]" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 sm:py-24 px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass rounded-3xl p-8 sm:p-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">
-              Partner with Us
+      {/* Timeline */}
+      <section className="py-20 bg-secondary/30">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Our <span className="text-primary">Milestones</span>
             </h2>
-            <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-              Join hundreds of satisfied clients who trust DN Multi Services for their industrial needs.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A journey of growth, innovation, and excellence
             </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/contact"
-                className="bg-[#BD2227] px-8 py-4 rounded-xl font-semibold hover:opacity-90 transition-opacity"
+          </motion.div>
+
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/20 hidden md:block" />
+
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={milestone.year}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`flex flex-col md:flex-row items-center mb-12 ${
+                  index % 2 === 0 ? "md:flex-row-reverse" : ""
+                }`}
               >
-                Contact Us
-              </Link>
-              <Link 
-                href="/services"
-                className="glass border border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/5 transition-colors"
-              >
-                View Services
-              </Link>
-            </div>
+                {/* Year */}
+                <div className="md:w-1/2 flex justify-center md:justify-end mb-6 md:mb-0">
+                  <div className="relative">
+                    <div className="w-24 h-24 rounded-full bg-primary text-white flex items-center justify-center text-xl font-bold font-heading shadow-lg">
+                      {milestone.year}
+                    </div>
+                    <div className="absolute top-1/2 transform -translate-y-1/2 w-6 h-6 bg-primary rounded-full hidden md:block" 
+                      style={{ 
+                        left: index % 2 === 0 ? 'auto' : 'calc(100% + 8px)',
+                        right: index % 2 === 0 ? 'calc(100% + 8px)' : 'auto'
+                      }} 
+                    />
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="md:w-1/2 px-0 md:px-12">
+                  <div className={`bg-white rounded-xl p-6 shadow-lg ${
+                    index % 2 === 0 ? "md:text-right" : ""
+                  }`}>
+                    <h3 className="text-xl font-bold font-heading mb-2">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {milestone.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      <Footer />
-    </main>
+      {/* Interactive Service Selector */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4">
+              Find Your <span className="text-primary">Solution</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Use our interactive selector to find the perfect engineering solution for your needs
+            </p>
+          </motion.div>
+
+          <InteractiveServiceSelector />
+        </div>
+      </section>
+    </>
   );
 }
