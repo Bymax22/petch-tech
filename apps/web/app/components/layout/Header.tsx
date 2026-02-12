@@ -41,10 +41,6 @@ const navItems = [
     href: "/capabilities" 
   },
   { 
-    label: "HSEQ", 
-    href: "/hseq" 
-  },
-  { 
     label: "Contact", 
     href: "/contact" 
   },
@@ -104,7 +100,7 @@ export default function Header() {
   const getQuote = () => {
     // Redirect to contact page or open modal
     if (typeof window !== 'undefined') {
-      window.location.href = "/contact?quote=true";
+      window.location.href = "/contact";
     }
   };
 
@@ -168,16 +164,15 @@ export default function Header() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-16 md:h-16 relative flex-shrink-0">
+              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 relative flex-shrink-0">
                 <Image
                   src="/Petch Tech logo h2-01.png"
                   alt="Petch Tech logo"
-                  width={64}
-                  height={64}
+                  width={96}
+                  height={96}
                   className="rounded-xl object-contain"
                 />
               </div>
-              {/* Logo contains company name, no additional text needed */}
             </Link>
 
             {/* Desktop Navigation */}
@@ -292,10 +287,10 @@ export default function Header() {
               {/* Desktop CTA */}
               <div className="hidden lg:flex items-center space-x-4">
                 <button
-                  onClick={getQuote}
+                  onClick={() => { if (typeof window !== 'undefined') window.location.href = '/contact'; }}
                   className="group bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 flex items-center space-x-2"
                 >
-                  <span>Get Quote</span>
+                  <span>Contact Us</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -399,12 +394,12 @@ export default function Header() {
                       
                       <button 
                         onClick={() => {
-                          getQuote();
+                          if (typeof window !== 'undefined') window.location.href = '/contact';
                           setMobileMenuOpen(false);
                         }}
                         className="w-full bg-accent text-black py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors flex items-center justify-center space-x-2"
                       >
-                        <span>Request Quote</span>
+                        <span>Contact Us</span>
                         <ArrowRight className="w-5 h-5" />
                       </button>
                     </div>

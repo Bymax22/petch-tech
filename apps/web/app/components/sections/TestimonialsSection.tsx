@@ -42,7 +42,7 @@ const testimonials = [
     company: "Copperbelt Energy",
     location: "Chingola, Zambia",
     rating: 5,
-    content: "Professional, reliable, and technically excellent. Their team handled a complex power plant maintenance project with minimal downtime. Their HSEQ standards are among the best we've worked with.",
+    content: "Professional, reliable, and technically excellent. Their team handled a complex power plant maintenance project with minimal downtime. Their standards are among the best we've worked with.",
     image: "/placeholder.svg",
   },
 ];

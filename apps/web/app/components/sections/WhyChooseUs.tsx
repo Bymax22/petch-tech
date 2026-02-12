@@ -50,7 +50,7 @@ const features = [
   {
     icon: Shield,
     title: "Safety First Approach",
-    description: "Zero-harm policy with stringent HSEQ protocols ensuring 100% safety compliance.",
+    description: "Zero-harm policy with stringent safety protocols ensuring 100% safety compliance.",
     stats: "Zero Incidents",
     color: "from-red-500/20 to-red-600/20",
     details: [

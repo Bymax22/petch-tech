@@ -241,7 +241,7 @@ export default function CTASection() {
           <div className="flex flex-wrap justify-center gap-6">
             {[
               "ISO 9001 Certified",
-              "HSEQ Compliant",
+              "Safety Focused",
               "24/7 Support",
               "On-time Delivery",
               "Warranty Included",

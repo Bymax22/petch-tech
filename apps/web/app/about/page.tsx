@@ -22,7 +22,7 @@ export default function AboutPage() {
     {
       icon: Shield,
       title: "Safety First",
-      description: "Zero-harm policy and strict HSEQ compliance",
+      description: "Zero-harm policy and strict safety compliance",
     },
     {
       icon: Target,
