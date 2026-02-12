@@ -188,6 +188,7 @@ export default function Header() {
                     }`}
                     onMouseEnter={() => item.submenu && setOpenSubmenu(item.label)}
                     onMouseLeave={() => setTimeout(() => setOpenSubmenu(null), 100)}
+                    onClick={() => { if (typeof window !== 'undefined') window.location.href = item.href; }}
                   >
                     <span className="relative">
                       {item.label}
@@ -220,6 +221,7 @@ export default function Header() {
                             key={subItem.label}
                             href={subItem.href}
                             className="flex items-center justify-between px-4 py-3 text-sm hover:bg-primary/5 hover:text-primary transition-all duration-200 group/subitem"
+                            onClick={() => { if (typeof window !== 'undefined') window.location.href = subItem.href; }}
                           >
                             <span>{subItem.label}</span>
                             <ArrowRight className="w-4 h-4 opacity-0 group-hover/subitem:opacity-100 transition-all duration-300 transform group-hover/subitem:translate-x-1" />
@@ -339,7 +341,10 @@ export default function Header() {
                               ? "bg-primary/10 text-primary"
                               : "hover:bg-gray-50"
                           }`}
-                          onClick={() => !item.submenu && setMobileMenuOpen(false)}
+                          onClick={() => {
+                            if (!item.submenu) setMobileMenuOpen(false);
+                            if (typeof window !== 'undefined') window.location.href = item.href;
+                          }}
                         >
                           <span>{item.label}</span>
                           {item.submenu && (
@@ -357,7 +362,10 @@ export default function Header() {
                                 key={subItem.label}
                                 href={subItem.href}
                                 className="block py-2 text-sm text-gray-600 hover:text-primary transition-colors pl-4"
-                                onClick={() => setMobileMenuOpen(false)}
+                                onClick={() => {
+                                  setMobileMenuOpen(false);
+                                  if (typeof window !== 'undefined') window.location.href = subItem.href;
+                                }}
                               >
                                 {subItem.label}
                               </Link>
