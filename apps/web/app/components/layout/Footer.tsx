@@ -84,34 +84,34 @@ export default function Footer() {
             <h4 className="font-heading font-bold text-lg mb-6">Our Services</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/civil" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Civil Works
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/mechanical" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Mechanical Engineering
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/electrical" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Electrical & Automation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/instrumentation" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Instrumentation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/fabrication" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Fabrication
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+                <Link href="/services/repairs" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
                   Industrial Repairs
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -171,15 +171,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Petch-Tech Engineering. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-6 text-sm">
-            <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+            <Link href="/privacy" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+            </Link>
+            <Link href="/terms" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
               Terms of Service
-            </a>
-            <a href="#" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
+            </Link>
+            <Link href="/cookie-policy" className="opacity-80 hover:opacity-100 hover:text-accent transition-colors">
               Cookie Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
