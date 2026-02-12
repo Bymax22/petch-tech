@@ -104,14 +104,23 @@ export default function CTASection() {
 
             {/* Quick Actions */}
             <div className="grid sm:grid-cols-2 gap-4">
-              <button className="flex items-center justify-center space-x-2 p-4 rounded-xl glass-effect hover:shadow-lg transition-all">
+              <a
+                href="https://wa.me/260955950008"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center space-x-2 p-4 rounded-xl glass-effect hover:shadow-lg transition-all"
+              >
                 <MessageCircle className="w-5 h-5" />
                 <span>Live Chat</span>
-              </button>
-              <button className="flex items-center justify-center space-x-2 p-4 rounded-xl glass-effect hover:shadow-lg transition-all">
+              </a>
+
+              <a
+                href="mailto:info@petch-tech.com?subject=Schedule%20Meeting"
+                className="flex items-center justify-center space-x-2 p-4 rounded-xl glass-effect hover:shadow-lg transition-all"
+              >
                 <Calendar className="w-5 h-5" />
                 <span>Schedule Meeting</span>
-              </button>
+              </a>
             </div>
           </motion.div>
 

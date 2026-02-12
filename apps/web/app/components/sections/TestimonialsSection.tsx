@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Star, Quote, ChevronLeft, ChevronRight, 
@@ -182,9 +183,9 @@ export default function TestimonialsSection() {
                         </div>
                       </div>
                       
-                      <button className="w-full py-3 bg-white text-primary rounded-lg font-medium hover:bg-white/90 transition-colors mt-8">
+                      <Link href="/projects" className="w-full inline-block text-center py-3 bg-white text-primary rounded-lg font-medium hover:bg-white/90 transition-colors mt-8">
                         View Case Study
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
