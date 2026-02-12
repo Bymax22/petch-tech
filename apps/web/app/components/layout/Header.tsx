@@ -156,20 +156,20 @@ export default function Header() {
         ref={headerRef}
         className={`sticky top-0 z-50 w-full transition-all duration-500 ${
           scrolled 
-            ? 'glass-effect border-b shadow-xl py-0 min-h-[4rem]' 
-            : 'bg-white/95 backdrop-blur-md py-2 min-h-[4rem]'
+            ? 'glass-effect border-b shadow-xl py-0 min-h-[3.25rem]' 
+            : 'bg-white/95 backdrop-blur-md py-2 min-h-[3.25rem]'
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between py-3">
+          <div className="flex items-center justify-between py-2">
             {/* Logo */}
             <Link href="/" className="flex items-center space-x-3 group flex-shrink-0">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 relative flex-shrink-0">
+              <div className="w-36 h-12 sm:w-44 sm:h-14 md:w-48 md:h-16 relative flex-shrink-0">
                 <Image
                   src="/Petch Tech logo h2-01.png"
                   alt="Petch Tech logo"
-                  width={96}
-                  height={96}
+                  width={192}
+                  height={64}
                   className="rounded-xl object-contain"
                 />
               </div>
@@ -311,7 +311,7 @@ export default function Header() {
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="lg:hidden fixed inset-0 top-[calc(6rem+1rem)] z-40 bg-black/50 backdrop-blur-sm animate-fade-in">
+            <div className="lg:hidden fixed inset-0 top-[calc(3.25rem+1rem)] z-40 bg-black/50 backdrop-blur-sm animate-fade-in">
               <div className="glass-effect rounded-2xl shadow-2xl border mx-4 mt-2 overflow-hidden animate-slide-up">
                 <div className="p-4">
                   {/* Mobile Search */}
